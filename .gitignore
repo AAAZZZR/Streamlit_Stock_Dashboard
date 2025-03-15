@@ -1,0 +1,4 @@
+.env
+.env.* 
+main.ipynb
+stockdashboard.py
