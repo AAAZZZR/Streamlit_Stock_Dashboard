@@ -1,0 +1,7 @@
+streamlit
+yfinance
+plotly
+finnhub-python
+python-dotenv
+pandas
+python-dateutil
