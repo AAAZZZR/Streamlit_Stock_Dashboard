@@ -22,7 +22,11 @@ def show_holdings_pies(symbol):
 
     
     st.write(f'latest update:{institution_hold["Date Reported"].unique()[0]}')
-
+    color_map = {
+    "Insiders": "red",
+    "Institutions": "green",
+    "Others": "blue"
+    }
     df_pie1 = pd.DataFrame({
         "Category": ["Insiders", "Institutions", "Others"],
         "Percent": [insiders_pct, institutions_pct, others_pct]
@@ -32,7 +36,9 @@ def show_holdings_pies(symbol):
         values="Percent",
         names="Category",
         title="(Insiders vs Institutions vs Others)",
-        hover_data={"Percent": ":.2%"}  # 顯示為百分比格式
+        hover_data=["Percent"],
+        color="Category",
+        color_discrete_map=color_map
     )
     # 在圖中顯示百分比+類別
     fig1.update_traces(
